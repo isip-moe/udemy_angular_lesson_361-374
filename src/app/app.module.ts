@@ -13,9 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import {StoreModule} from '@ngrx/store'
-import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
-import { authReducer } from './auth/store/auth.reducer';
-
+import * as fromApp from './store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, AuthComponent],
@@ -26,7 +24,7 @@ import { authReducer } from './auth/store/auth.reducer';
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
-    StoreModule.forRoot({shoppingList:shoppingListReducer,auth:authReducer}),
+    StoreModule.forRoot(fromApp.appReducer),
     ShoppingListModule,
     SharedModule,
   ],
