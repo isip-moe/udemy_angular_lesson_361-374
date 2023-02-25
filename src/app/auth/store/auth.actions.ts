@@ -5,22 +5,30 @@ export const LOGOUT = "LOGOUT"
 
 
 export class Login implements Action {
-  readonly type: string = LOGIN;
-  constructor(public payload: {
+  readonly type = LOGIN;
+  payload: {
     email: string,
     userId: string,
     token: string,
     expirationDate: Date
-  }) { }
+  }
+  constructor(payload: {
+    email: string,
+    userId: string,
+    token: string,
+    expirationDate: Date
+  }) {
+    this.payload = payload
+  }
 
 }
 
 
 export class Logout implements Action {
-  readonly type: string = LOGOUT;
+  readonly type = LOGOUT;
 }
 
 
 export type AuthActions =
   Login |
-  Logout
+  Logout;
