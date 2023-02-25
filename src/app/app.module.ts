@@ -14,6 +14,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import {StoreModule} from '@ngrx/store'
 import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
+import { authReducer } from './auth/store/auth.reducer';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
-    StoreModule.forRoot({shoppingList:shoppingListReducer}),
+    StoreModule.forRoot({shoppingList:shoppingListReducer,auth:authReducer}),
     ShoppingListModule,
     SharedModule,
   ],
