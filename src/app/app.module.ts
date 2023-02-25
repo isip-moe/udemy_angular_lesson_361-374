@@ -10,7 +10,6 @@ import { AuthComponent } from './auth/auth.component';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import {StoreModule} from '@ngrx/store'
@@ -31,7 +30,6 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     SharedModule,
   ],
   providers:[
-    ShoppingListService,
     RecipeService,
     {
       provide: HTTP_INTERCEPTORS,
