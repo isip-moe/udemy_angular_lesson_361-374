@@ -14,7 +14,7 @@ export class AuthEffects {
     switchMap((authData: AuthActions.LoginStart) => {
       return this.http
         .post<AuthResponseData>(
-          "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCBo0hOkuRCM0kTXJCUqcTtKDLpFLldt30",
+          "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCBo0hOkuRCM0kTXJCUqcTtKDLpFLldt30",
           {
             email: authData.payload.email,
             password: authData.payload.password,
